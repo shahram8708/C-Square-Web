@@ -1,0 +1,164 @@
+{% extends "base.html" %}
+{% block title %}C-Square Web | Transform Local Businesses{% endblock %}
+{% block meta_description %}C-Square Web builds conversion-led websites, branding, and growth systems that help local businesses become remarkable digital brands.{% endblock %}
+
+{% block content %}
+<section class="hero-section">
+  <div class="container py-5">
+    <div class="row align-items-center g-5">
+      <div class="col-lg-6" data-aos="fade-right">
+        <div class="pill-badge"><i class="bi bi-stars"></i> Chandan Kumar · Founder</div>
+        <h1 class="display-4 fw-bold mb-3">Transforming <span class="highlight">local businesses</span> into standout digital brands.</h1>
+        <p class="lead text-muted">From strategy and design to launch and scale, we build high-performing web experiences that convert visitors into loyal customers.</p>
+        <div class="d-flex flex-wrap gap-3 mt-4">
+          <a href="{{ url_for('booking') }}" class="btn btn-gradient btn-lg">Start a Project</a>
+          <a href="{{ url_for('portfolio') }}" class="btn btn-outline-primary btn-lg">View Portfolio</a>
+        </div>
+        <div class="trusted-banner mt-5 d-flex align-items-center gap-3">
+          <i class="bi bi-people-fill fs-3"></i>
+          <div>
+            <strong>Trusted by 50+ businesses</strong>
+            <p class="mb-0 small">Retail stores, cafes, gyms, salons, and startups across India.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6" data-aos="fade-left">
+        <div class="card card-neo">
+          <h3 class="fw-bold mb-4">Why C-Square Web?</h3>
+          <ul class="list-unstyled d-grid gap-3 mb-0">
+            <li class="d-flex gap-3"><span class="icon-circle"><i class="fa-solid fa-laptop-code"></i></span><div><h6 class="mb-1">Custom, responsive experiences</h6><p class="text-muted mb-0">Engineered to be blazing fast and optimized for every device.</p></div></li>
+            <li class="d-flex gap-3"><span class="icon-circle"><i class="fa-solid fa-chart-line"></i></span><div><h6 class="mb-1">Performance that drives revenue</h6><p class="text-muted mb-0">SEO-ready builds, crafted for measurable growth.</p></div></li>
+            <li class="d-flex gap-3"><span class="icon-circle"><i class="fa-solid fa-shield-halved"></i></span><div><h6 class="mb-1">Secure & scalable foundations</h6><p class="text-muted mb-0">SSL, analytics, automations, and future-proof tech.</p></div></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-spacer">
+  <div class="container">
+    <div class="row justify-content-center text-center mb-4">
+      <div class="col-lg-8">
+        <h2 class="section-title" data-aos="fade-up">Quick success snapshot</h2>
+        <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">We treat every project like a growth partnership — combining branding, UX, and marketing automation to deliver results the very first week.</p>
+      </div>
+    </div>
+    <div class="metrics-grid">
+      <div class="metric-card" data-aos="zoom-in" data-aos-delay="50">
+        <span class="badge-pill"><i class="bi bi-people"></i> Clients</span>
+        <div class="metric-value" data-counter="50">0</div>
+        <p class="text-muted mb-0">Ambitious founders and community-loved businesses.</p>
+      </div>
+      <div class="metric-card" data-aos="zoom-in" data-aos-delay="150">
+        <span class="badge-pill"><i class="bi bi-kanban"></i> Projects</span>
+        <div class="metric-value" data-counter="40">0</div>
+        <p class="text-muted mb-0">E-commerce, bookings, lead funnels, and brand refreshes.</p>
+      </div>
+      <div class="metric-card" data-aos="zoom-in" data-aos-delay="250">
+        <span class="badge-pill"><i class="bi bi-emoji-smile"></i> Satisfaction</span>
+        <div class="metric-value" data-counter="95">0</div>
+        <p class="text-muted mb-0">Clients love our clarity, support, and quick turnaround.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-spacer section-bg mx-3 mx-md-5" data-aos="fade-up">
+  <div class="container py-5">
+    <div class="row align-items-center g-4">
+      <div class="col-lg-6">
+        <div class="video-card position-relative">
+          <video src="https://storage.googleapis.com/coverr-main/mp4/Mt_Baker.mp4" poster="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1200&q=80" muted data-autopause></video>
+          <div class="video-overlay">
+            <h4 class="fw-bold mb-3">Watch the portfolio reel</h4>
+            <p class="mb-4">Explore how we blend strategy, storytelling, and motion to launch memorable brands.</p>
+            <a class="btn btn-gradient" href="{{ url_for('portfolio') }}"><i class="bi bi-play-circle me-2"></i>See All Projects</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <h3 class="fw-bold mb-3">Everything you need to launch & grow online</h3>
+        <p class="text-muted">We partner with you end-to-end — from naming and positioning to launch strategy, funnel optimization, and scaling your marketing stack.</p>
+        <div class="d-grid gap-3 mt-4">
+          <div class="d-flex gap-3">
+            <span class="icon-circle"><i class="fa-solid fa-swatchbook"></i></span>
+            <div><h6 class="fw-semibold mb-1">Brand systems & voice</h6><p class="text-muted mb-0">Guidelines, messaging, and content kit ready on day one.</p></div>
+          </div>
+          <div class="d-flex gap-3">
+            <span class="icon-circle"><i class="fa-solid fa-rocket"></i></span>
+            <div><h6 class="fw-semibold mb-1">Launch playbooks</h6><p class="text-muted mb-0">Pre-built campaigns, email sequences, and growth workflows.</p></div>
+          </div>
+          <div class="d-flex gap-3">
+            <span class="icon-circle"><i class="fa-solid fa-gauge-high"></i></span>
+            <div><h6 class="fw-semibold mb-1">Analytics & insights</h6><p class="text-muted mb-0">Conversion dashboards to monitor performance in real time.</p></div>
+          </div>
+        </div>
+        <div class="mt-4">
+          <a href="{{ url_for('services') }}" class="btn btn-outline-primary">Explore full service stack <i class="bi bi-arrow-right"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-spacer">
+  <div class="container">
+    <div class="row text-center mb-4">
+      <div class="col-lg-7 mx-auto">
+        <span class="badge-pill"><i class="bi bi-tools"></i> Services snapshot</span>
+        <h2 class="section-title">Solutions engineered for impact</h2>
+      </div>
+    </div>
+    <div class="row g-4">
+      <div class="col-md-6 col-xl-4" data-aos="fade-up" data-aos-delay="50">
+        <div class="service-card h-100">
+          <div class="icon-circle"><i class="fa-solid fa-code"></i></div>
+          <h5 class="fw-semibold">Custom Web Development</h5>
+          <p class="text-muted flex-grow-1">UI/UX research, component libraries, and blazing fast build optimized for conversions.</p>
+          <a href="{{ url_for('services') }}" class="stretched-link fw-semibold text-decoration-none">Learn more <i class="bi bi-arrow-up-right"></i></a>
+        </div>
+      </div>
+      <div class="col-md-6 col-xl-4" data-aos="fade-up" data-aos-delay="150">
+        <div class="service-card h-100">
+          <div class="icon-circle"><i class="fa-solid fa-arrow-trend-up"></i></div>
+          <h5 class="fw-semibold">SEO & Growth Marketing</h5>
+          <p class="text-muted flex-grow-1">Local SEO, performance campaigns, and retargeting funnels tailored to your revenue goals.</p>
+          <a href="{{ url_for('services') }}" class="stretched-link fw-semibold text-decoration-none">Discover how <i class="bi bi-arrow-up-right"></i></a>
+        </div>
+      </div>
+      <div class="col-md-6 col-xl-4" data-aos="fade-up" data-aos-delay="250">
+        <div class="service-card h-100">
+          <div class="icon-circle"><i class="fa-solid fa-lightbulb"></i></div>
+          <h5 class="fw-semibold">Branding & Identity</h5>
+          <p class="text-muted flex-grow-1">Logos, typography, color systems, and content guidelines to keep your brand consistent.</p>
+          <a href="{{ url_for('services') }}" class="stretched-link fw-semibold text-decoration-none">See packages <i class="bi bi-arrow-up-right"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-spacer section-bg mx-3 mx-md-5" data-aos="fade-up">
+  <div class="container py-5">
+    <div class="row align-items-center g-4">
+      <div class="col-lg-6">
+        <h3 class="fw-bold">Ready to build momentum?</h3>
+        <p class="text-muted">Share your goals, timeline, and budget — we’ll create the fastest path to launch with dedicated support and clear milestones.</p>
+        <ul class="list-unstyled d-grid gap-2">
+          <li><i class="bi bi-check2-circle text-success me-2"></i> Strategy call within 24 hours.</li>
+          <li><i class="bi bi-check2-circle text-success me-2"></i> Project dashboard & weekly updates.</li>
+          <li><i class="bi bi-check2-circle text-success me-2"></i> Launch support & 90-day care plan.</li>
+        </ul>
+      </div>
+      <div class="col-lg-6">
+        <form action="{{ url_for('booking') }}" method="get" class="card card-neo">
+          <h5 class="fw-semibold">Book a discovery call</h5>
+          <p class="text-muted">Pick a time that works for you — we’ll prep a tailored roadmap.</p>
+          <button class="btn btn-gradient" type="submit">Book now <i class="bi bi-arrow-right ms-2"></i></button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

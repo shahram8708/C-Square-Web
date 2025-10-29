@@ -1,0 +1,136 @@
+{% extends "base.html" %}
+{% block title %}About · C-Square Web{% endblock %}
+{% block meta_description %}Discover the story of Chandan Kumar and C-Square Web — a design-led web studio helping local businesses grow with strategic digital experiences.{% endblock %}
+
+{% block content %}
+<section class="section-spacer hero-section">
+  <div class="container py-5">
+    <div class="row g-5 align-items-center">
+      <div class="col-lg-6" data-aos="fade-right">
+        <span class="pill-badge"><i class="bi bi-person-workspace"></i> Meet Chandan Kumar</span>
+        <h1 class="fw-bold display-5 mb-3">Web developer. Growth partner. Creative collaborator.</h1>
+        <p class="lead text-muted">I launched C-Square Web to help ambitious founders look as professional online as they are in real life. We craft digital products that are fast, delightful, and built for business outcomes.</p>
+        <div class="d-flex gap-3 flex-wrap mt-4">
+          <a href="{{ url_for('services') }}" class="btn btn-gradient">Explore services</a>
+          <a href="https://www.linkedin.com/in/chandan-kumar-6156812b5/" class="btn btn-outline-primary" target="_blank" rel="noopener"><i class="fab fa-linkedin me-2"></i>Connect on LinkedIn</a>
+        </div>
+      </div>
+      <div class="col-lg-5 ms-lg-auto" data-aos="fade-left">
+        <div class="card card-neo text-center">
+          <img src="https://images.unsplash.com/photo-1545239351-1141bd82e8a6?auto=format&fit=crop&w=600&q=80" class="rounded-4 mb-4" alt="Chandan Kumar portrait" />
+          <h4 class="fw-semibold">Chandan Kumar</h4>
+          <p class="text-muted">Founder · Lead Developer</p>
+          <div class="d-flex justify-content-center gap-3 mt-3">
+            <div>
+              <span class="d-block fw-bold h4 mb-0">6+</span>
+              <small class="text-muted">Years experience</small>
+            </div>
+            <div>
+              <span class="d-block fw-bold h4 mb-0">4</span>
+              <small class="text-muted">Core team members</small>
+            </div>
+            <div>
+              <span class="d-block fw-bold h4 mb-0">3</span>
+              <small class="text-muted">Active cities</small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-spacer">
+  <div class="container">
+    <div class="row text-center mb-5">
+      <div class="col-lg-8 mx-auto">
+        <h2 class="section-title">Our mission, vision & values</h2>
+        <p class="section-subtitle">We exist to give small businesses the same competitive edge that bigger brands enjoy — without the agency fluff and unpredictable timelines.</p>
+      </div>
+    </div>
+    <div class="row g-4">
+      <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="50">
+        <div class="card card-neo h-100">
+          <div class="icon-circle"><i class="fa-solid fa-bullseye"></i></div>
+          <h5 class="fw-semibold mt-3">Mission</h5>
+          <p class="text-muted">Empower founders with digital products that provide clarity, build trust, and unlock new revenue streams.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="150">
+        <div class="card card-neo h-100">
+          <div class="icon-circle"><i class="fa-solid fa-eye"></i></div>
+          <h5 class="fw-semibold mt-3">Vision</h5>
+          <p class="text-muted">Become the go-to web partner for every ambitious business in tier-2 and tier-3 cities across India.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="250">
+        <div class="card card-neo h-100">
+          <div class="icon-circle"><i class="fa-solid fa-heart"></i></div>
+          <h5 class="fw-semibold mt-3">Values</h5>
+          <p class="text-muted">Trust, transparency, professionalism, and on-time delivery are the pillars of how we work and support our clients.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-spacer section-bg mx-3 mx-md-5" data-aos="fade-up">
+  <div class="container py-5">
+    <div class="row align-items-center g-4">
+      <div class="col-lg-6">
+        <h3 class="fw-bold">What makes our process different</h3>
+        <ul class="list-unstyled d-grid gap-3 mt-4">
+          <li class="d-flex gap-3"><span class="icon-circle"><i class="fa-solid fa-clock"></i></span><div><h6 class="fw-semibold mb-1">Predictable timelines</h6><p class="text-muted mb-0">Milestone-based delivery with weekly updates in your dashboard.</p></div></li>
+          <li class="d-flex gap-3"><span class="icon-circle"><i class="fa-solid fa-comments"></i></span><div><h6 class="fw-semibold mb-1">Collaboration-first</h6><p class="text-muted mb-0">Figma prototypes, Loom walkthroughs, and async collaboration tools.</p></div></li>
+          <li class="d-flex gap-3"><span class="icon-circle"><i class="fa-solid fa-shield"></i></span><div><h6 class="fw-semibold mb-1">Post-launch care</h6><p class="text-muted mb-0">90-day care plan covering updates, fixes, and growth recommendations.</p></div></li>
+        </ul>
+      </div>
+      <div class="col-lg-6">
+        <div class="card card-neo">
+          <h5 class="fw-semibold mb-3">Our core beliefs</h5>
+          <div class="d-grid gap-3">
+            <div class="d-flex align-items-center gap-3">
+              <span class="timeline-dot"></span>
+              <p class="mb-0">Every business deserves a premium digital presence.</p>
+            </div>
+            <div class="d-flex align-items-center gap-3">
+              <span class="timeline-dot"></span>
+              <p class="mb-0">Design and storytelling must drive conversion.</p>
+            </div>
+            <div class="d-flex align-items-center gap-3">
+              <span class="timeline-dot"></span>
+              <p class="mb-0">Launch is a milestone — growth is an ongoing partnership.</p>
+            </div>
+            <div class="d-flex align-items-center gap-3">
+              <span class="timeline-dot"></span>
+              <p class="mb-0">Great communication is the secret weapon for project success.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-spacer">
+  <div class="container">
+    <div class="row g-4 align-items-center">
+      <div class="col-lg-5" data-aos="fade-right">
+        <h3 class="fw-bold">Ready to team up with us?</h3>
+        <p class="text-muted">Let's talk about your ideas, timelines, and what success looks like. You’ll get a roadmap tailored to your goals.</p>
+      </div>
+      <div class="col-lg-6 ms-lg-auto" data-aos="fade-left">
+        <div class="card card-neo">
+          <h5 class="fw-semibold mb-3">What to expect in our first call</h5>
+          <ul class="list-unstyled d-grid gap-2">
+            <li><i class="bi bi-check2-circle text-success me-2"></i> Project discovery & goals</li>
+            <li><i class="bi bi-check2-circle text-success me-2"></i> Timeline and investment breakdown</li>
+            <li><i class="bi bi-check2-circle text-success me-2"></i> Launch roadmap & success metrics</li>
+          </ul>
+          <a href="{{ url_for('booking') }}" class="btn btn-gradient mt-3">Book a call</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

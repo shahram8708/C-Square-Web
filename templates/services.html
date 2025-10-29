@@ -1,0 +1,122 @@
+{% extends "base.html" %}
+{% block title %}Services · C-Square Web{% endblock %}
+{% block meta_description %}Browse C-Square Web's services including custom web development, SEO campaigns, e-commerce solutions, branding, maintenance, and analytics reporting.{% endblock %}
+
+{% block content %}
+<section class="section-spacer hero-section">
+  <div class="container py-5">
+    <div class="row align-items-center g-4">
+      <div class="col-lg-7" data-aos="fade-right">
+        <span class="pill-badge"><i class="bi bi-stack"></i> Service suite</span>
+        <h1 class="fw-bold display-5">Strategic services built for founders who want results fast.</h1>
+        <p class="lead text-muted">From pixel-perfect websites to full-funnel marketing, we help you launch confidently and scale sustainably.</p>
+        <div class="d-flex gap-3 mt-3 flex-wrap">
+          <a href="{{ url_for('booking') }}" class="btn btn-gradient">Book a consultation</a>
+          <a href="{{ url_for('portfolio') }}" class="btn btn-outline-primary">See case studies</a>
+        </div>
+      </div>
+      <div class="col-lg-5" data-aos="fade-left">
+        <div class="card card-neo">
+          <h5 class="fw-semibold mb-3">Every engagement includes</h5>
+          <ul class="list-unstyled d-grid gap-2 mb-0">
+            <li><i class="bi bi-check2-circle text-success me-2"></i> Strategy workshop & kickoff deck</li>
+            <li><i class="bi bi-check2-circle text-success me-2"></i> Project dashboard with timeline</li>
+            <li><i class="bi bi-check2-circle text-success me-2"></i> Launch checklist & QA</li>
+            <li><i class="bi bi-check2-circle text-success me-2"></i> 90-day support retainer</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-spacer">
+  <div class="container">
+    <div class="row g-4">
+      {% set services = [
+        {
+          'icon': 'fa-code',
+          'title': 'Custom Web Development',
+          'desc': 'Responsive, SEO-ready websites built with modern stacks, component libraries, and performance best practices.',
+          'cta': 'Schedule a build',
+          'features': ['UX research & wireframes', 'Design systems & pattern library', 'Performance optimization (Core Web Vitals)', 'Hosting + SSL setup']
+        },
+        {
+          'icon': 'fa-magnifying-glass-chart',
+          'title': 'Digital Marketing & SEO',
+          'desc': 'Organic and paid strategies to keep your pipeline full. We set up analytics, funnels, and reporting dashboards.',
+          'cta': 'Request a growth plan',
+          'features': ['Keyword research & on-page SEO', 'Local SEO & Google Business Profile', 'Paid campaigns (Meta, Google)', 'Email automation & lead magnets']
+        },
+        {
+          'icon': 'fa-pen-nib',
+          'title': 'Branding & Design',
+          'desc': 'Standout visual identity that matches your voice. Logos, brand systems, and launch assets that feel premium.',
+          'cta': 'Shape my brand',
+          'features': ['Logo suite & brand marks', 'Color palette & typography', 'Brand playbook & usage guide', 'Social media kit & templates']
+        },
+        {
+          'icon': 'fa-cart-shopping',
+          'title': 'E-commerce Experiences',
+          'desc': 'Conversion-friendly storefronts with payment gateways, inventory automation, and marketing integrations.',
+          'cta': 'Launch my store',
+          'features': ['Shopify / WooCommerce builds', 'Payment + shipping automation', 'Product photography guidelines', 'Upsell & retention workflows']
+        },
+        {
+          'icon': 'fa-shield-halved',
+          'title': 'Maintenance & Support',
+          'desc': 'Stay stress-free post launch. We take care of updates, security, content tweaks, and uptime monitoring.',
+          'cta': 'Add a care plan',
+          'features': ['Monthly health report', 'Security updates & backups', 'Content and copy updates', '24-hour SLA for critical fixes']
+        },
+        {
+          'icon': 'fa-chart-line',
+          'title': 'Data & Analytics',
+          'desc': 'Get clarity on what’s working. We set up dashboards, KPIs, and insights that drive better decisions.',
+          'cta': 'Ask for a demo',
+          'features': ['Analytics & event tracking', 'Conversion funnels', 'Attribution & campaign reporting', 'Quarterly performance reviews']
+        }
+      ] %}
+
+      {% for service in services %}
+      <div class="col-md-6 col-xl-4" data-aos="fade-up" data-aos-delay="{{ loop.index0 * 75 }}">
+        <div class="card card-neo h-100">
+          <div class="icon-circle"><i class="fa-solid {{ service.icon }}"></i></div>
+          <h4 class="fw-semibold mt-3">{{ service.title }}</h4>
+          <p class="text-muted">{{ service.desc }}</p>
+          <ul class="list-unstyled d-grid gap-1 small text-muted">
+            {% for item in service.features %}
+            <li><i class="bi bi-check2 text-success me-2"></i>{{ item }}</li>
+            {% endfor %}
+          </ul>
+          <a href="{{ url_for('booking') }}" class="btn btn-outline-primary mt-3">{{ service.cta }} <i class="bi bi-arrow-right ms-2"></i></a>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section-spacer section-bg mx-3 mx-md-5" data-aos="fade-up">
+  <div class="container py-5">
+    <div class="row g-4 align-items-center">
+      <div class="col-lg-6">
+        <h3 class="fw-bold">Need a bundle or white-label partner?</h3>
+        <p class="text-muted">We collaborate with agencies, consultants, and marketing teams that need reliable execution on tight timelines.</p>
+        <ul class="list-unstyled d-grid gap-2">
+          <li><i class="bi bi-check2-circle text-success me-2"></i> NDA-friendly white-label production</li>
+          <li><i class="bi bi-check2-circle text-success me-2"></i> Sprint-based design & development</li>
+          <li><i class="bi bi-check2-circle text-success me-2"></i> Dedicated Slack and PM support</li>
+        </ul>
+      </div>
+      <div class="col-lg-5 ms-lg-auto">
+        <div class="card card-neo">
+          <h5 class="fw-semibold">Book the next available slot</h5>
+          <p class="text-muted">Share your requirements — we reply within 24 hours with scope, timeline, and investment.</p>
+          <a href="{{ url_for('contact') }}" class="btn btn-gradient">Contact sales</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

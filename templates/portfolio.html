@@ -1,0 +1,133 @@
+{% extends "base.html" %}
+{% block title %}Portfolio · C-Square Web{% endblock %}
+{% block meta_description %}Explore C-Square Web portfolio featuring restaurant, salon, cafe, and gym websites plus a portfolio reel showcasing real launches.{% endblock %}
+
+{% block content %}
+<section class="section-spacer hero-section">
+  <div class="container py-5">
+    <div class="row align-items-center g-5">
+      <div class="col-lg-6" data-aos="fade-right">
+        <span class="pill-badge"><i class="bi bi-briefcase"></i> Recent launches</span>
+        <h1 class="fw-bold display-5">A glimpse into the brands we’ve elevated.</h1>
+        <p class="lead text-muted">We blend storytelling, conversion-centered UX, and high-performing technology to build digital experiences that win customers.</p>
+        <div class="d-flex gap-3 flex-wrap mt-4">
+          <a href="{{ url_for('booking') }}" class="btn btn-gradient">Request a custom walkthrough</a>
+          <a href="https://wa.me/9031379801" class="btn btn-outline-primary" target="_blank" rel="noopener"><i class="fab fa-whatsapp me-2"></i>Chat with us</a>
+        </div>
+      </div>
+      <div class="col-lg-6" data-aos="fade-left">
+        <div class="card card-neo">
+          <h5 class="fw-semibold mb-3">Industries we’ve helped</h5>
+          <div class="d-flex flex-wrap gap-2">
+            <span class="badge-pill">Restaurants</span>
+            <span class="badge-pill">Beauty & wellness</span>
+            <span class="badge-pill">Fitness & gyms</span>
+            <span class="badge-pill">Retail</span>
+            <span class="badge-pill">E-commerce</span>
+            <span class="badge-pill">Professional services</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-spacer">
+  <div class="container">
+    <div class="row text-center mb-5">
+      <div class="col-lg-8 mx-auto">
+        <h2 class="section-title">Featured projects</h2>
+        <p class="section-subtitle">Every project pairs handcrafted UI with strategic messaging, technical SEO, and launch collateral.</p>
+      </div>
+    </div>
+    <div class="grid-gallery">
+      {% set projects = [
+        {
+          'title': 'Restaurant Website',
+          'desc': 'Interactive menu, reservations, and Google reviews integration for a premium dining experience.',
+          'img': 'https://images.unsplash.com/photo-1525610553991-2bede1a236e2?auto=format&fit=crop&w=1200&q=80',
+          'stack': ['HTML', 'CSS', 'JavaScript'],
+          'url': 'https://68edf42563ad657b8f3ca181--gorgeous-alpaca-6a5502.netlify.app/'
+        },
+        {
+          'title': 'Salon Website',
+          'desc': 'Scheduling workflows with service showcase, stylists gallery, and automated WhatsApp bookings.',
+          'img': 'https://images.unsplash.com/photo-1580618672591-eb180b1a973f?auto=format&fit=crop&w=1200&q=80',
+          'stack': ['React', 'CSS Modules'],
+          'url': 'https://68ef56683b20ae943893fde0--gentle-arithmetic-182d7a.netlify.app/'
+        },
+        {
+          'title': 'Cafe Website',
+          'desc': 'Seasonal menu updates, loyalty program integrations, and Instagram-powered gallery.',
+          'img': 'https://images.unsplash.com/photo-1453614512568-c4024d13c247?auto=format&fit=crop&w=1200&q=80',
+          'stack': ['HTML', 'JavaScript'],
+          'url': 'https://68ef57dd1167728cf3547377--lustrous-figolla-374222.netlify.app/'
+        },
+        {
+          'title': 'Gym Website',
+          'desc': 'Class schedules, membership funnels, and success stories with high-energy visuals.',
+          'img': 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=1200&q=80',
+          'stack': ['React', 'Tailwind CSS'],
+          'url': 'https://68ef5429efb9897daa47323e--extraordinary-pegasus-6bf6d7.netlify.app/'
+        }
+      ] %}
+
+      {% for project in projects %}
+      <div class="card gallery-card" data-aos="zoom-in" data-aos-delay="{{ loop.index0 * 80 }}">
+        <img src="{{ project.img }}" alt="{{ project.title }} showcase" loading="lazy">
+        <div class="card-body">
+          <h5 class="fw-semibold">{{ project.title }}</h5>
+          <p class="text-muted">{{ project.desc }}</p>
+          <div class="d-flex flex-wrap gap-2 mb-3">
+            {% for tech in project.stack %}
+            <span class="badge bg-light text-dark border">{{ tech }}</span>
+            {% endfor %}
+          </div>
+          <a href="{{ project.url }}" target="_blank" class="btn btn-outline-primary">View project <i class="bi bi-arrow-up-right ms-2"></i></a>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section-spacer section-bg mx-3 mx-md-5" data-aos="fade-up">
+  <div class="container py-5">
+    <div class="row g-4 align-items-center">
+      <div class="col-lg-7">
+        <div class="video-card">
+          <video src="https://storage.googleapis.com/coverr-main/mp4/Footboys.mp4" poster="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=1200&q=80" controls class="w-100 rounded-4"></video>
+        </div>
+      </div>
+      <div class="col-lg-5">
+        <h3 class="fw-bold">Portfolio reel</h3>
+        <p class="text-muted">See how we launch experiences that feel premium, load lightning fast, and tell stories in a memorable way.</p>
+        <ul class="list-unstyled d-grid gap-2">
+          <li><i class="bi bi-check2-circle text-success me-2"></i> Responsive UI optimized for every breakpoint</li>
+          <li><i class="bi bi-check2-circle text-success me-2"></i> Integrated lead generation and booking flows</li>
+          <li><i class="bi bi-check2-circle text-success me-2"></i> Automation-ready marketing stack</li>
+        </ul>
+        <a href="{{ url_for('contact') }}" class="btn btn-gradient mt-3">Discuss your project</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-spacer">
+  <div class="container">
+    <div class="row align-items-center g-4">
+      <div class="col-lg-6" data-aos="fade-right">
+        <h3 class="fw-bold">Ready to ideate your new website?</h3>
+        <p class="text-muted">Share your goals and we’ll co-create a project scope with timelines, deliverables, and success metrics.</p>
+      </div>
+      <div class="col-lg-5 ms-lg-auto" data-aos="fade-left">
+        <div class="card card-neo">
+          <h5 class="fw-semibold mb-3">Get the portfolio PDF</h5>
+          <p class="text-muted">Receive detailed case studies, stacks, and results from recent launches.</p>
+          <a href="{{ url_for('contact') }}" class="btn btn-outline-primary">Email me the deck</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

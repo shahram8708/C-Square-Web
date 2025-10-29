@@ -1,0 +1,82 @@
+{% extends "base.html" %}
+{% block title %}Testimonials · C-Square Web{% endblock %}
+{% block meta_description %}Read testimonials from C-Square Web clients including Rohan Sharma, Neha Pandey, and more about their successful website launches.{% endblock %}
+
+{% block content %}
+<section class="section-spacer hero-section">
+  <div class="container py-5">
+    <div class="row align-items-center g-5">
+      <div class="col-lg-6" data-aos="fade-right">
+        <span class="pill-badge"><i class="bi bi-chat-heart"></i> Client love</span>
+        <h1 class="fw-bold display-5">Stories from founders who trusted us with their brand.</h1>
+        <p class="lead text-muted">From project kick-off to post-launch wins, we’re obsessed with creating remarkable experiences for you and your customers.</p>
+        <a href="{{ url_for('booking') }}" class="btn btn-gradient mt-3">Start your story</a>
+      </div>
+      <div class="col-lg-5 ms-lg-auto" data-aos="fade-left">
+        <div class="card card-neo">
+          <h5 class="fw-semibold mb-3">Impact snapshot</h5>
+          <ul class="list-unstyled d-grid gap-2 text-muted">
+            <li><i class="bi bi-graph-up-arrow text-success me-2"></i> 2x increase in inbound leads for local service businesses</li>
+            <li><i class="bi bi-cart-check text-success me-2"></i> Online stores recovering 30% abandoned carts with automation</li>
+            <li><i class="bi bi-lightning-charge text-success me-2"></i> Launch timelines shortened to 3 weeks with agile sprints</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-spacer">
+  <div class="container">
+    <div class="row text-center mb-5">
+      <div class="col-lg-8 mx-auto">
+        <h2 class="section-title">What founders are saying</h2>
+        <p class="section-subtitle">Genuine words from teams who partnered with C-Square Web to level up their digital presence.</p>
+      </div>
+    </div>
+    <div class="row g-4">
+      {% set testimonials = [
+        ('https://randomuser.me/api/portraits/men/1.jpg', 'Rohan Sharma', 'Owner · Spice Route Bistro', '“Chandan built our restaurant website in record time with mouthwatering design and a reservation flow that just works.”'),
+        ('https://randomuser.me/api/portraits/women/2.jpg', 'Neha Pandey', 'Founder · Glow Salon', '“Professional, timely, and creative. We now get 40% more booking inquiries directly from the site.”'),
+        ('https://randomuser.me/api/portraits/men/5.jpg', 'Mr. Shoheb', 'Director · FitNation Gym', '“From membership funnels to analytics, everything is streamlined. Members love the new experience.”'),
+        ('https://randomuser.me/api/portraits/men/7.jpg', 'Gaurabh Singh', 'CEO · Urban Cafe Co.', '“C-Square Web captured our vibe perfectly. Sales jumped within the first week of launch.”'),
+        ('https://randomuser.me/api/portraits/women/8.jpg', 'Sneha Das', 'Founder · Dazzle Nails Studio', '“Our e-commerce sales doubled after the redesign. The onboarding was smooth and collaborative.”'),
+        ('https://randomuser.me/api/portraits/men/9.jpg', 'Raunak Mehta', 'Partner · Pixel Printworks', '“Reliable, trustworthy, and detail-oriented. They now handle all our web projects end-to-end.”')
+      ] %}
+
+      {% for item in testimonials %}
+      <div class="col-md-6 col-xl-4" data-aos="fade-up" data-aos-delay="{{ loop.index0 * 100 }}">
+        <div class="testimonial-card h-100">
+          <div class="d-flex align-items-center gap-3 mb-3">
+            <img src="{{ item[0] }}" class="testimonial-avatar" alt="{{ item[1] }} portrait">
+            <div>
+              <h6 class="fw-semibold mb-0">{{ item[1] }}</h6>
+              <small class="text-muted">{{ item[2] }}</small>
+            </div>
+          </div>
+          <p class="mb-0 text-muted">{{ item[3] }}</p>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section-spacer section-bg mx-3 mx-md-5" data-aos="fade-up">
+  <div class="container py-5">
+    <div class="row g-4 align-items-center">
+      <div class="col-lg-6">
+        <h3 class="fw-bold">Become our next success story</h3>
+        <p class="text-muted">We’ll analyze your current presence, build a roadmap, and ship a conversion-first experience.</p>
+      </div>
+      <div class="col-lg-5 ms-lg-auto">
+        <div class="card card-neo">
+          <h5 class="fw-semibold">Want references?</h5>
+          <p class="text-muted">We’re happy to connect you with a few of our clients so you can hear about their journey first-hand.</p>
+          <a href="{{ url_for('contact') }}" class="btn btn-outline-primary">Request references</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

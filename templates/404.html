@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %}Page Not Found · C-Square Web{% endblock %}
+
+{% block content %}
+<section class="error-hero">
+  <div class="container text-center" data-aos="fade-up">
+    <span class="display-1 fw-bold text-gradient">404</span>
+    <h1 class="fw-bold mt-3">Oops! That page took a different route.</h1>
+    <p class="text-muted">The content you’re hunting for has probably been redesigned, renamed, or never existed. Let’s get you back on track.</p>
+    <div class="d-flex gap-3 justify-content-center mt-4">
+      <a href="{{ url_for('home') }}" class="btn btn-gradient">Go home</a>
+      <a href="{{ url_for('contact') }}" class="btn btn-outline-primary">Report this</a>
+    </div>
+  </div>
+</section>
+{% endblock %}

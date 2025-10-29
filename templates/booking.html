@@ -1,0 +1,89 @@
+{% extends "base.html" %}
+{% block title %}Book a Project · C-Square Web{% endblock %}
+{% block meta_description %}Book a discovery call or project with C-Square Web. Share your preferred date, time, and requirements to get started quickly.{% endblock %}
+
+{% block content %}
+<section class="section-spacer hero-section">
+  <div class="container py-5">
+    <div class="row align-items-center g-4">
+      <div class="col-lg-6" data-aos="fade-right">
+        <span class="pill-badge"><i class="bi bi-calendar-check"></i> Book your slot</span>
+        <h1 class="fw-bold display-5">Let’s launch your next big thing.</h1>
+        <p class="lead text-muted">Pick a convenient time and tell us about your goals. We’ll respond with a tailored project plan, transparent pricing, and next steps.</p>
+        <ul class="list-unstyled d-grid gap-2 text-muted mt-4">
+          <li><i class="bi bi-check2-circle text-success me-2"></i> 30-minute discovery call on Google Meet or Zoom</li>
+          <li><i class="bi bi-check2-circle text-success me-2"></i> Proposal within 48 hours of the call</li>
+          <li><i class="bi bi-check2-circle text-success me-2"></i> Access to our client portal & templates</li>
+        </ul>
+      </div>
+      <div class="col-lg-5 ms-lg-auto" data-aos="fade-left">
+        <div class="card card-neo">
+          <h5 class="fw-semibold mb-3">Need instant help?</h5>
+          <p class="text-muted mb-3">Message us on WhatsApp and our team will respond in minutes.</p>
+          <a href="https://wa.me/9031379801" class="btn btn-success" target="_blank" rel="noopener"><i class="fab fa-whatsapp me-2"></i>Chat on WhatsApp</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-spacer">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-8" data-aos="fade-up">
+        <div class="card card-neo">
+          <h3 class="fw-semibold mb-3">Book a discovery call</h3>
+          <p class="text-muted">We’ll email you a calendar invite and a short questionnaire to prepare for our session.</p>
+          <form action="{{ url_for('booking') }}" method="post" class="row g-3 needs-validation" novalidate>
+            <div class="col-md-6">
+              <label for="name" class="form-label">Full name</label>
+              <input type="text" class="form-control" id="name" name="name" placeholder="Enter your full name" required>
+              <div class="invalid-feedback">Please share your name.</div>
+            </div>
+            <div class="col-md-6">
+              <label for="email" class="form-label">Email address</label>
+              <input type="email" class="form-control" id="email" name="email" placeholder="you@example.com" required>
+              <div class="invalid-feedback">A valid email is required.</div>
+            </div>
+            <div class="col-md-6">
+              <label for="phone" class="form-label">Phone number</label>
+              <input type="tel" class="form-control" id="phone" name="phone" placeholder="+91 90313 79801" required>
+              <div class="invalid-feedback">Please provide a contact number.</div>
+            </div>
+            <div class="col-md-3">
+              <label for="date" class="form-label">Preferred date</label>
+              <input type="date" class="form-control" id="date" name="date" required>
+              <div class="invalid-feedback">Select a date.</div>
+            </div>
+            <div class="col-md-3">
+              <label for="time" class="form-label">Preferred time</label>
+              <input type="time" class="form-control" id="time" name="time" required>
+              <div class="invalid-feedback">Select a time.</div>
+            </div>
+            <div class="col-12">
+              <label for="budget" class="form-label">Estimated budget</label>
+              <select class="form-select" id="budget" name="budget" required>
+                <option selected disabled value="">Choose an option</option>
+                <option value="Below INR 25k">Below INR 25k</option>
+                <option value="INR 25k - 50k">INR 25k - 50k</option>
+                <option value="INR 50k - 1L">INR 50k - 1L</option>
+                <option value="Above INR 1L">Above INR 1L</option>
+              </select>
+              <div class="invalid-feedback">Let us know your comfort range.</div>
+            </div>
+            <div class="col-12">
+              <label for="message" class="form-label">Tell us about your project</label>
+              <textarea class="form-control" id="message" name="message" rows="5" placeholder="Goals, timelines, existing assets, inspiration links..." required></textarea>
+              <div class="invalid-feedback">Share a few details so we can prepare.</div>
+            </div>
+            <div class="col-12 d-flex justify-content-between align-items-center">
+              <small class="text-muted">We respect your time — no spam, no hard sells.</small>
+              <button class="btn btn-gradient" type="submit">Book now</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

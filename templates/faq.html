@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+{% block title %}FAQ · C-Square Web{% endblock %}
+{% block meta_description %}Find answers to frequently asked questions about timelines, maintenance, SEO, redesigns, analytics, and more at C-Square Web.{% endblock %}
+
+{% block content %}
+<section class="section-spacer hero-section">
+  <div class="container py-5">
+    <div class="row align-items-center g-4">
+      <div class="col-lg-6" data-aos="fade-right">
+        <span class="pill-badge"><i class="bi bi-question-circle"></i> Frequently asked</span>
+        <h1 class="fw-bold display-5">Answers to the top questions founders ask before we kick off.</h1>
+        <p class="lead text-muted">Can’t find what you’re looking for? Send us a note — we’ll respond within one business day.</p>
+        <a href="{{ url_for('contact') }}" class="btn btn-gradient mt-3">Ask a new question</a>
+      </div>
+      <div class="col-lg-5 ms-lg-auto" data-aos="fade-left">
+        <div class="card card-neo">
+          <h5 class="fw-semibold mb-3">Support highlights</h5>
+          <ul class="list-unstyled text-muted d-grid gap-2 mb-0">
+            <li><i class="bi bi-clock-history text-success me-2"></i> Replies in &lt; 24 hours</li>
+            <li><i class="bi bi-journal-check text-success me-2"></i> Detailed project documentation</li>
+            <li><i class="bi bi-headset text-success me-2"></i> Dedicated success manager</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-spacer">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-9">
+        <div class="accordion" id="faqAccordion">
+          {% set faqs = [
+            ('How long does a website take?', 'Most projects take 2–4 weeks depending on the scope, content readiness, and feedback cycles.'),
+            ('Do you provide maintenance?', 'Yes, every project includes 3 months of maintenance plus affordable care plans for ongoing support.'),
+            ('Can I update my content?', 'Absolutely. We build with CMS options or provide editor guides so you can manage updates anytime.'),
+            ('Do you provide SEO?', 'SEO is part of every engagement — technical setup, on-page optimization, and launch checklists.'),
+            ('Can you build e-commerce sites?', 'Yes, we design and launch stores with payment gateways, inventory automation, and retention campaigns.'),
+            ('Do you design logos?', 'Yes, branding and identity design is part of our core service suite with moodboards and usage guides.'),
+            ('Is my website secure?', 'We implement SSL, backups, uptime monitoring, and security best practices for peace of mind.'),
+            ('Do you provide analytics?', 'We configure Google Analytics 4, Search Console, and custom dashboards to track results.'),
+            ('Do you offer support after launch?', 'Every client receives 90 days of priority launch support plus optional retainers for growth.'),
+            ('Can you redesign existing websites?', 'We love redesigns. We audit your current experience and relaunch with a conversion-first approach.')
+          ] %}
+
+          {% for faq in faqs %}
+          <div class="accordion-item mb-3" data-aos="fade-up" data-aos-delay="{{ loop.index0 * 70 }}">
+            <h2 class="accordion-header" id="heading{{ loop.index }}">
+              <button class="accordion-button {% if loop.index != 1 %}collapsed{% endif %}" type="button" data-bs-toggle="collapse" data-bs-target="#collapse{{ loop.index }}" aria-expanded="{{ 'true' if loop.index == 1 else 'false' }}" aria-controls="collapse{{ loop.index }}">
+                {{ faq[0] }}
+              </button>
+            </h2>
+            <div id="collapse{{ loop.index }}" class="accordion-collapse collapse {% if loop.index == 1 %}show{% endif %}" aria-labelledby="heading{{ loop.index }}" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">
+                {{ faq[1] }}
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

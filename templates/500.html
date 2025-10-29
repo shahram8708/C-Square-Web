@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %}Server Error · C-Square Web{% endblock %}
+
+{% block content %}
+<section class="error-hero">
+  <div class="container text-center" data-aos="fade-up">
+    <span class="display-1 fw-bold text-gradient">500</span>
+    <h1 class="fw-bold mt-3">Well, this is awkward.</h1>
+    <p class="text-muted">Something unexpected happened on our side. Our team has been notified and is already on it.</p>
+    <div class="d-flex gap-3 justify-content-center mt-4">
+      <a href="{{ url_for('home') }}" class="btn btn-gradient">Reload homepage</a>
+      <a href="mailto:hello@csquareweb.com" class="btn btn-outline-primary">Email support</a>
+    </div>
+  </div>
+</section>
+{% endblock %}

@@ -1,0 +1,91 @@
+{% extends "base.html" %}
+{% block title %}Contact · C-Square Web{% endblock %}
+{% block meta_description %}Contact C-Square Web for project inquiries, collaborations, and support. Reach us via form, email, phone, or WhatsApp.{% endblock %}
+
+{% block content %}
+<section class="section-spacer hero-section">
+  <div class="container py-5">
+    <div class="row align-items-center g-5">
+      <div class="col-lg-6" data-aos="fade-right">
+        <span class="pill-badge"><i class="bi bi-envelope-open"></i> Contact</span>
+        <h1 class="fw-bold display-5">Let’s turn your ideas into momentum.</h1>
+        <p class="lead text-muted">Drop us a message with a few bullet points — we’ll reply personally with the next steps.</p>
+        <div class="d-flex flex-column gap-3 mt-4 text-muted">
+          <div><i class="bi bi-envelope-fill text-primary me-2"></i> hello@csquareweb.com</div>
+          <div><i class="bi bi-phone-fill text-primary me-2"></i> +91 90313 79801</div>
+          <div><i class="bi bi-geo-alt-fill text-primary me-2"></i> Patna, Bihar · Serving clients globally</div>
+        </div>
+      </div>
+      <div class="col-lg-5 ms-lg-auto" data-aos="fade-left">
+        <div class="card card-neo">
+          <h5 class="fw-semibold mb-3">Prefer a quick chat?</h5>
+          <p class="text-muted">Our WhatsApp line is open Monday to Saturday, 9 AM – 7 PM IST.</p>
+          <a href="https://wa.me/9031379801" class="btn btn-success" target="_blank" rel="noopener"><i class="fab fa-whatsapp me-2"></i>Message on WhatsApp</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-spacer">
+  <div class="container">
+    <div class="row g-4">
+      <div class="col-lg-6" data-aos="fade-right">
+        <div class="card card-neo h-100">
+          <h3 class="fw-semibold mb-3">Send us a message</h3>
+          <p class="text-muted">We’ll get back within 24 hours with answers, ideas, or a quick call invite.</p>
+          <form action="{{ url_for('contact') }}" method="post" class="needs-validation" novalidate>
+            <div class="mb-3">
+              <label for="contact-name" class="form-label">Name</label>
+              <input type="text" class="form-control" id="contact-name" name="name" required>
+              <div class="invalid-feedback">What should we call you?</div>
+            </div>
+            <div class="mb-3">
+              <label for="contact-email" class="form-label">Email</label>
+              <input type="email" class="form-control" id="contact-email" name="email" required>
+              <div class="invalid-feedback">We’ll reply to this email.</div>
+            </div>
+            <div class="mb-3">
+              <label for="contact-message" class="form-label">How can we help?</label>
+              <textarea class="form-control" id="contact-message" name="message" rows="5" required></textarea>
+              <div class="invalid-feedback">Tell us a little about your project.</div>
+            </div>
+            <button class="btn btn-gradient" type="submit">Submit</button>
+          </form>
+        </div>
+      </div>
+      <div class="col-lg-6" data-aos="fade-left">
+        <div class="card card-neo h-100" id="map">
+          <h3 class="fw-semibold mb-3">Visit or collaborate remotely</h3>
+          <p class="text-muted">We’re based in Patna, Bihar, and work with founders across India, Singapore, the Middle East, and the UK.</p>
+          <div class="map-wrapper">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3662.195874724477!2d85.1376!3d25.6093!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39ed58632c1f90d3%3A0x12e8c75b8ddb6a7!2sPatna%2C%20Bihar%20800001!5e0!3m2!1sen!2sin!4v1709220000000" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+          <div class="d-flex gap-3 mt-4">
+            <a href="mailto:hello@csquareweb.com" class="btn btn-outline-primary flex-grow-1"><i class="bi bi-send me-2"></i>Email us</a>
+            <a href="tel:+919031379801" class="btn btn-outline-secondary flex-grow-1"><i class="bi bi-telephone me-2"></i>Call us</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-spacer section-bg mx-3 mx-md-5" data-aos="fade-up">
+  <div class="container py-5">
+    <div class="row align-items-center g-4">
+      <div class="col-lg-6">
+        <h3 class="fw-bold">Let’s kickstart your project</h3>
+        <p class="text-muted">Share a quick overview and we’ll prepare a roadmap, budget, and timeline tailored to your goals.</p>
+      </div>
+      <div class="col-lg-5 ms-lg-auto">
+        <div class="card card-neo">
+          <h5 class="fw-semibold mb-3">Want instant answers?</h5>
+          <p class="text-muted mb-3">Browse our FAQ before booking a call.</p>
+          <a href="{{ url_for('faq') }}" class="btn btn-outline-primary">View FAQ</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

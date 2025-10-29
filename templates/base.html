@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="{% block meta_description %}C-Square Web crafts high-converting websites, digital branding, and growth marketing for local businesses and startups.{% endblock %}">
+  <meta name="keywords" content="web development, digital agency, SEO, C-Square Web, Chandan Kumar">
+  <meta property="og:title" content="{% block og_title %}C-Square Web | Digital Growth Partner{% endblock %}">
+  <meta property="og:description" content="{% block og_description %}C-Square Web helps local businesses become digital-first brands with modern web solutions.{% endblock %}">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="{{ request.url }}">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1200&q=80">
+  <title>{% block title %}C-Square Web{% endblock %}</title>
+  <link rel="icon" href="https://fav.farm/%F0%9F%9A%80">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+  {% block extra_head %}{% endblock %}
+</head>
+<body class="theme-light" id="page-top">
+  <div id="preloader" class="d-flex flex-column justify-content-center align-items-center">
+    <div class="spinner-border text-primary" role="status">
+      <span class="visually-hidden">Loading...</span>
+    </div>
+    <p class="mt-3 fw-semibold">Crafting something amazing...</p>
+  </div>
+
+  <button id="scrollTop" class="btn btn-primary rounded-circle shadow-lg"><i class="bi bi-arrow-up"></i></button>
+
+  <nav class="navbar navbar-expand-lg sticky-top shadow-sm" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="{{ url_for('home') }}">
+        <span class="brand-icon"><i class="fa-solid fa-cubes"></i></span>
+        C-Square Web
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="toggler-line"></span>
+        <span class="toggler-line"></span>
+        <span class="toggler-line"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarContent">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link {% if request.endpoint == 'home' %}active{% endif %}" href="{{ url_for('home') }}">Home</a></li>
+          <li class="nav-item"><a class="nav-link {% if request.endpoint == 'about' %}active{% endif %}" href="{{ url_for('about') }}">About</a></li>
+          <li class="nav-item"><a class="nav-link {% if request.endpoint == 'services' %}active{% endif %}" href="{{ url_for('services') }}">Services</a></li>
+          <li class="nav-item"><a class="nav-link {% if request.endpoint == 'portfolio' %}active{% endif %}" href="{{ url_for('portfolio') }}">Portfolio</a></li>
+          <li class="nav-item"><a class="nav-link {% if request.endpoint == 'why_us' %}active{% endif %}" href="{{ url_for('why_us') }}">Why Us</a></li>
+          <li class="nav-item"><a class="nav-link {% if request.endpoint == 'testimonials' %}active{% endif %}" href="{{ url_for('testimonials') }}">Testimonials</a></li>
+          <li class="nav-item"><a class="nav-link {% if request.endpoint == 'faq' %}active{% endif %}" href="{{ url_for('faq') }}">FAQ</a></li>
+          <li class="nav-item"><a class="nav-link {% if request.endpoint == 'booking' %}active{% endif %}" href="{{ url_for('booking') }}">Booking</a></li>
+          <li class="nav-item"><a class="nav-link {% if request.endpoint == 'contact' %}active{% endif %}" href="{{ url_for('contact') }}">Contact</a></li>
+        </ul>
+        <div class="d-flex align-items-center gap-3 ms-lg-4">
+          <button class="btn btn-outline-primary btn-theme" id="themeToggle" type="button" aria-label="Toggle theme"><i class="bi bi-moon-stars"></i></button>
+          <a class="btn btn-primary" href="{{ url_for('booking') }}">Book a Call</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+        <div class="flash-wrapper">
+          {% for category, message in messages %}
+            <div class="alert alert-{{ category }} alert-dismissible fade show shadow-sm" role="alert">
+              {{ message }}
+              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+          {% endfor %}
+        </div>
+      {% endif %}
+    {% endwith %}
+
+    {% block content %}{% endblock %}
+  </main>
+
+  <footer class="py-5 text-white">
+    <div class="container">
+      <div class="row gy-4">
+        <div class="col-lg-4">
+          <h5 class="fw-bold mb-3">C-Square Web</h5>
+          <p>Strategic web experiences for entrepreneurs, startups, and local businesses that need to scale fast and look sharp.</p>
+          <div class="d-flex gap-3">
+            <a class="social-link" href="https://www.linkedin.com/in/chandan-kumar-6156812b5/" target="_blank" rel="noopener"><i class="fab fa-linkedin-in"></i></a>
+            <a class="social-link" href="https://www.instagram.com/chandan_developer" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a>
+            <a class="social-link" href="https://wa.me/9031379801" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i></a>
+          </div>
+        </div>
+        <div class="col-lg-3">
+          <h6 class="mb-3">Quick Links</h6>
+          <ul class="list-unstyled d-grid gap-2">
+            <li><a href="{{ url_for('services') }}">Services</a></li>
+            <li><a href="{{ url_for('portfolio') }}">Portfolio</a></li>
+            <li><a href="{{ url_for('why_us') }}">Why Choose Us</a></li>
+            <li><a href="{{ url_for('booking') }}">Book a Project</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-3">
+          <h6 class="mb-3">Contact</h6>
+          <ul class="list-unstyled d-grid gap-2">
+            <li><i class="bi bi-envelope"></i> hello@csquareweb.com</li>
+            <li><i class="bi bi-telephone"></i> +91 90313 79801</li>
+            <li><i class="bi bi-geo-alt"></i> Patna, Bihar, India</li>
+          </ul>
+        </div>
+        <div class="col-lg-2">
+          <h6 class="mb-3">Let's Collaborate</h6>
+          <a class="btn btn-outline-light w-100" href="{{ url_for('contact') }}">Start a Project</a>
+        </div>
+      </div>
+      <hr class="border-light opacity-25 my-4">
+      <div class="d-flex flex-column flex-md-row justify-content-between align-items-center gap-2">
+        <span>© {{ current_year }} C-Square Web. All rights reserved.</span>
+        <div class="d-flex gap-3 small opacity-75">
+          <a href="{{ url_for('faq') }}" class="text-white">FAQ</a>
+          <a href="{{ url_for('contact') }}#map" class="text-white">Location</a>
+          <a href="{{ url_for('booking') }}" class="text-white">Book Now</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <div class="floating-chat">
+    <button class="btn btn-success rounded-pill px-3 py-2 shadow" data-bs-toggle="modal" data-bs-target="#chatModal">
+      <i class="bi bi-chat-dots me-2"></i>Chat with Us
+    </button>
+  </div>
+
+  <div class="modal fade" id="chatModal" tabindex="-1" aria-labelledby="chatModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-end">
+      <div class="modal-content">
+        <div class="modal-header bg-primary text-white">
+          <h5 class="modal-title" id="chatModalLabel">Chat with C-Square Web</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p class="fw-semibold mb-2">Need a quick quote?</p>
+          <p class="text-muted small">Share a few details and we will respond within 24 hours.</p>
+          <a class="btn btn-success w-100" href="https://wa.me/9031379801" target="_blank" rel="noopener"><i class="fab fa-whatsapp me-2"></i>Continue on WhatsApp</a>
+        </div>
+        <div class="modal-footer justify-content-between">
+          <small class="text-muted">Prefer email? <a href="mailto:hello@csquareweb.com">hello@csquareweb.com</a></small>
+          <button type="button" class="btn btn-outline-secondary btn-sm" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+  {% block extra_scripts %}{% endblock %}
+</body>
+</html>

@@ -1,0 +1,81 @@
+{% extends "base.html" %}
+{% block title %}Why Choose Us · C-Square Web{% endblock %}
+{% block meta_description %}Discover why businesses trust C-Square Web for modern design, client-focused strategy, affordable pricing, and reliable support.{% endblock %}
+
+{% block content %}
+<section class="section-spacer hero-section">
+  <div class="container py-5">
+    <div class="row align-items-center g-5">
+      <div class="col-lg-7" data-aos="fade-right">
+        <span class="pill-badge"><i class="bi bi-patch-check"></i> Our edge</span>
+        <h1 class="fw-bold display-5">We’re more than a web vendor — we’re your growth partner.</h1>
+        <p class="lead text-muted">Every deliverable is shaped by strategy, powered by automation, and polished through design storytelling.</p>
+      </div>
+      <div class="col-lg-5" data-aos="fade-left">
+        <div class="card card-neo">
+          <h5 class="fw-semibold mb-3">What clients say</h5>
+          <blockquote class="blockquote mb-0 text-muted">“C-Square Web helped us move from an outdated website to a conversion machine in three weeks — with customer support that felt in-house.”</blockquote>
+          <footer class="blockquote-footer mt-3">Sneha Das, Founder · Dazzle Nails Studio</footer>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-spacer">
+  <div class="container">
+    <div class="row text-center mb-5">
+      <div class="col-lg-8 mx-auto">
+        <h2 class="section-title">Why teams love working with us</h2>
+        <p class="section-subtitle">Eight core pillars backed by processes, tooling, and the right mix of creativity and technology.</p>
+      </div>
+    </div>
+    <div class="row g-4">
+      {% set reasons = [
+        ('Modern Designs', 'fa-wand-magic-sparkles', 'Crafted UI/UX that feels premium, on brand, and conversion-focused.'),
+        ('Client-Focused', 'fa-handshake', 'We collaborate in Figma, Notion, and Loom to stay transparent at every step.'),
+        ('Affordable Pricing', 'fa-tags', 'Flexible packages and payment milestones that respect your cash flow.'),
+        ('Reliable Support', 'fa-life-ring', '90-day launch care and priority support when it matters the most.'),
+        ('SEO Optimized', 'fa-magnifying-glass-chart', 'Technical, on-page, and local SEO best practices baked into every build.'),
+        ('Secure Websites', 'fa-lock', 'SSL, daily backups, and proactive monitoring keep your brand protected.'),
+        ('Fast Loading', 'fa-gauge-high', 'Core Web Vitals optimized for the fastest experience across devices.'),
+        ('Analytics Ready', 'fa-chart-pie', 'Custom dashboards with GA4, Search Console, and conversion tracking.')
+      ] %}
+
+      {% for reason in reasons %}
+      <div class="col-md-6 col-xl-3" data-aos="fade-up" data-aos-delay="{{ loop.index0 * 60 }}">
+        <div class="usp-card h-100">
+          <i class="fa-solid {{ reason[1] }}"></i>
+          <div>
+            <h5 class="fw-semibold mb-1">{{ reason[0] }}</h5>
+            <p class="text-muted mb-0">{{ reason[2] }}</p>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section-spacer section-bg mx-3 mx-md-5" data-aos="fade-up">
+  <div class="container py-5">
+    <div class="row align-items-center g-4">
+      <div class="col-lg-6">
+        <h3 class="fw-bold">Our collaboration blueprint</h3>
+        <ol class="list-unstyled d-grid gap-3 mt-4">
+          <li class="d-flex gap-3"><span class="icon-circle"><i class="bi bi-1-circle"></i></span><div><h6 class="fw-semibold mb-1">Discovery & strategy jam</h6><p class="text-muted mb-0">Clarify goals, audiences, and your unique differentiator.</p></div></li>
+          <li class="d-flex gap-3"><span class="icon-circle"><i class="bi bi-2-circle"></i></span><div><h6 class="fw-semibold mb-1">Design + content prototyping</h6><p class="text-muted mb-0">Collaborative sprints with live feedback, copy editing, and motion previews.</p></div></li>
+          <li class="d-flex gap-3"><span class="icon-circle"><i class="bi bi-3-circle"></i></span><div><h6 class="fw-semibold mb-1">Build, QA, and launch</h6><p class="text-muted mb-0">Rigorous testing, training calls, and go-live support.</p></div></li>
+        </ol>
+      </div>
+      <div class="col-lg-5 ms-lg-auto">
+        <div class="card card-neo">
+          <h5 class="fw-semibold">Let’s co-create your roadmap</h5>
+          <p class="text-muted">Tell us about your challenges — we’ll respond with a tailored recommendation deck.</p>
+          <a href="{{ url_for('contact') }}" class="btn btn-gradient">Contact us</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}
